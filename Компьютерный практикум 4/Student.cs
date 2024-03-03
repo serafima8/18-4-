@@ -23,11 +23,11 @@ namespace Компьютерный_практикум_4
         /// <summary>
         /// Конструктор с параметрами
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
-        /// <param name="birth"></param>
-        /// <param name="faculty"></param>
-        /// <param name="course"></param>
+        /// <param name="name">Имя</param>
+        /// <param name="surname">Фамилия</param>
+        /// <param name="birth">Дата рождения</param>
+        /// <param name="faculty">Факультет</param>
+        /// <param name="course">Курс</param>
         public Student(string name, string surname, DateTime birth, string faculty,int course) : base(name, surname, birth, faculty)
         {
             this.course = course;
@@ -38,16 +38,14 @@ namespace Компьютерный_практикум_4
         /// <returns></returns>
         public override int Age()
         {
-
             if (DateTime.Now < (Birth.AddYears(DateTime.Now.Year - Birth.Year)))
             {
-                Console.WriteLine($"Возраст: {DateTime.Now.Year - Birth.Year - 1}");
+                return DateTime.Now.Year - Birth.Year - 1;
             }
             else
             {
-                Console.WriteLine($"Возраст: {DateTime.Now.Year - Birth.Year}");
+                return DateTime.Now.Year - Birth.Year;
             }
-            return Age();
         }
         /// <summary>
         /// Метод, который выводит информацию о студенте 
@@ -57,7 +55,24 @@ namespace Компьютерный_практикум_4
             base.Print();
             Console.WriteLine($"Курс: {course}");
         }
-
+        /// <summary>
+        /// етод, с помощью которого мы вводим информацию о студенте 
+        /// </summary>
+        /// <returns></returns>
+        static public Student Show()
+        {
+            Console.Write("Введите имя: ");
+            string name = Console.ReadLine();
+            Console.Write("Введите фамилию: ");
+            string surname = Console.ReadLine();
+            Console.Write("Введите дату рождения: ");
+            DateTime birth = Convert.ToDateTime(Console.ReadLine());
+            Console.Write("Введите факультет: ");
+            string faculty = Console.ReadLine();
+            Console.Write("Введите курс: ");
+            int course = int.Parse(Console.ReadLine());
+            return new Student(name, surname, birth, faculty,course);
+        }
 
     }
 }

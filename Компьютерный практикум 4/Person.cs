@@ -24,7 +24,6 @@ namespace Компьютерный_практикум_4
         /// Создание поля факультет
         /// </summary>
         private string faculty;
-
         /// <summary>
         /// Свойство поля name
         /// </summary>

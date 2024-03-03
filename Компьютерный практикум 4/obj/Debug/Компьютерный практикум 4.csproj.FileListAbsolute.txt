@@ -1,0 +1,7 @@
+C:\Users\seraf\OneDrive\Рабочий стол\18-4--main\Компьютерный практикум 4\bin\Debug\Компьютерный практикум 4.exe.config
+C:\Users\seraf\OneDrive\Рабочий стол\18-4--main\Компьютерный практикум 4\bin\Debug\Компьютерный практикум 4.exe
+C:\Users\seraf\OneDrive\Рабочий стол\18-4--main\Компьютерный практикум 4\bin\Debug\Компьютерный практикум 4.pdb
+C:\Users\seraf\OneDrive\Рабочий стол\18-4--main\Компьютерный практикум 4\obj\Debug\Компьютерный практикум 4.csproj.AssemblyReference.cache
+C:\Users\seraf\OneDrive\Рабочий стол\18-4--main\Компьютерный практикум 4\obj\Debug\Компьютерный практикум 4.csproj.CoreCompileInputs.cache
+C:\Users\seraf\OneDrive\Рабочий стол\18-4--main\Компьютерный практикум 4\obj\Debug\Компьютерный практикум 4.exe
+C:\Users\seraf\OneDrive\Рабочий стол\18-4--main\Компьютерный практикум 4\obj\Debug\Компьютерный практикум 4.pdb
