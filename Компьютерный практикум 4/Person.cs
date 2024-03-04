@@ -9,37 +9,21 @@ namespace Компьютерный_практикум_4
     abstract class Person
     {
         /// <summary>
-        /// Создание поля имени
-        /// </summary>
-        private string name;
-        /// <summary>
-        /// Создание поля фамилии 
-        /// </summary>
-        private string surname;
-        /// <summary>
-        /// Создание поля дата рождения
-        /// </summary>
-        private DateTime birth;
-        /// <summary>
-        /// Создание поля факультет
-        /// </summary>
-        private string faculty;
-        /// <summary>
         /// Свойство поля name
         /// </summary>
-        public string Name { get { return name; } set { name = value; } }
+        public string Name { get; set; }
         /// <summary>
         /// Свойство поля surname
         /// </summary>
-        public string Surname { get { return surname; } set { surname = value; } }
+        public string Surname { get; set; }
         /// <summary>
         /// Свойство поля birth
         /// </summary>
-        public DateTime Birth { get { return birth; } set { birth = value; } }
+        public DateTime Birth { get; set; }
         /// <summary>
         /// Свойство поля faculty
         /// </summary>
-        public string Faculty { get { return faculty; } set { faculty = value; } }
+        public string Faculty { get; set; }
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
@@ -53,22 +37,30 @@ namespace Компьютерный_практикум_4
         /// <param name="faculty"></param>
         public Person(string name, string surname, DateTime birth,string faculty)
         {
-            this.name = name;
-            this.surname = surname;
-            this.birth = birth;
-            this.faculty = faculty;
+            this.Name = name;
+            this.Surname = surname;
+            this.Birth = birth;
+            this.Faculty = faculty;
         }
         /// <summary>
         /// абстрактный метод, предназначенный для получения возраста персоны
         /// </summary>
         /// <returns></returns>
-        public abstract int Age();
+        //public abstract int Age();
+
+        public int Age()
+        {
+            return DateTime.Now.Year - Birth. Year;
+        }
         /// <summary>
         /// виртуальный метод, который выводит информацию о персоне 
         /// </summary>
-        public virtual void Print()
-        {
-            Console.WriteLine($"имя: {name}\nФамилия: {surname}\nДата рождения: {birth}\nФакультет: {faculty}");
-        }
+        public abstract void Print();
+        //{
+        //    Console.WriteLine($"имя: {Name}\nФамилия: {Surname}\nДата рождения: {Birth}\nФакультет: {Faculty}");
+        //}
+
+       
     }
+    
 }

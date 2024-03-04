@@ -19,11 +19,11 @@ namespace Компьютерный_практикум_4
         /// <summary>
         /// Свойство поля post
         /// </summary>
-        public string Post { get { return post; } set { post = value; } }
+        public string Post { get; set; }
         /// <summary>
         /// Свойство поля experience
         /// </summary>
-        public int Experience { get { return experience; } set { experience = value; } }
+        public int Experience { get; set; }
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
@@ -39,31 +39,15 @@ namespace Компьютерный_практикум_4
         /// <param name="experience">Стаж работы</param>
         public Teacher(string name, string surname, DateTime birth, string faculty,string post, int experience) : base(name, surname, birth, faculty)
         {
-            this.post = post;
-            this.experience = experience;
-        }
-        /// <summary>
-        /// Метод, который выводит информацию о возрасте преподавателя
-        /// </summary>
-        /// <returns></returns>
-        public override int Age()
-        {
-            if (DateTime.Now < (Birth.AddYears(DateTime.Now.Year - Birth.Year)))
-            {
-                return DateTime.Now.Year - Birth.Year - 1;
-            }
-            else
-            {
-                return DateTime.Now.Year - Birth.Year;
-            }
+            this.Post = post;
+            this.Experience = experience;
         }
         /// <summary>
         /// Метод, который выводит информацию о преподавателе
         /// </summary>
         public override void Print()
         {
-            base.Print();
-            Console.WriteLine($"Должность: {post}\nСтаж: {experience}");
+            Console.WriteLine($"Имя: {Name}\nФамилия: {Surname}\nДата рождения: {Birth}\nФакультет: {Faculty}\n Должность: {post}\nСтаж: {experience}\nВозраст: {Age()}");
         }
         /// <summary>
         /// Метод, с помощью которого мы вводим информацию о препо

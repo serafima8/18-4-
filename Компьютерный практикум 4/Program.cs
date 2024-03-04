@@ -11,6 +11,7 @@ namespace Компьютерный_практикум_4
         static void Main(string[] args)
         {
             List<Person> persons = new List<Person>();
+            //Создание базы
             while (true)
             {
                 Console.Write("Введите персону: ");
@@ -20,30 +21,16 @@ namespace Компьютерный_практикум_4
                     case "абитуриент":
                         Enrollee enrollee = new Enrollee();
                         persons.Add(Enrollee.Show());
-                        foreach (var elem in persons)
-                        {
-                            elem.Print();
-                            Console.WriteLine($"Возраст: {elem.Age()}");
-                        }
                         break;
                     case "преподаватель":
                         Teacher teacher = new Teacher();
                         persons.Add(Teacher.Show());
-                        foreach (var elem in persons)
-                        {
-                            elem.Print();
-                            Console.WriteLine($"Возраст: {elem.Age()}");
-                        }
                         break;
                     case "студент":
                         Student student = new Student();
                         persons.Add(Student.Show());
-                        foreach (var elem in persons)
-                        {
-                            elem.Print();
-                            Console.WriteLine($"Возраст: {elem.Age()}");
-                        }
                         break;
+                       
                     case "0": return;
                     default:
                         Console.WriteLine("Персоны не существует");
@@ -51,15 +38,21 @@ namespace Компьютерный_практикум_4
                 }
                 foreach (var elem in persons)
                 {
-                    if (elem.Age() > 20 && elem.Age() < 30)
+                    elem.Print();
+                }
+                Console.WriteLine();
+                Console.Write("Введите нижнюю границу: ");
+                int minAge = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Введите верхнюю границу: ");
+                int maxAge = Convert.ToInt32(Console.ReadLine());
+                for(int i=0;i<persons.Count;i++)
+                {
+                    if (persons[i].Age() > minAge && persons[i].Age() < maxAge) 
                     {
-                        Console.WriteLine($"Персона попадает в заданный диапазон ");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Персона не попадает в заданный диапазон ");
+                        persons[i].Print();
                     }
                 }
+
                 Console.ReadKey();
             }
         }
